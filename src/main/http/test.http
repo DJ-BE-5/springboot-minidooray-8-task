@@ -1,0 +1,29 @@
+###project 전체조회
+
+###project 조회
+GET http://localhost:8080/projects/1
+Content-Type: application/json
+
+###project 등록
+POST http://localhost:8080/projects
+Content-Type: application/json
+
+{
+  "adminId" : 1,
+  "name" : "프로젝트DB",
+  "status" : "휴면"
+}
+
+###project 수정
+PUT http://localhost:8080/projects/1
+Content-Type: application/json
+
+{
+  "adminId" : 1,
+  "name" : "프로젝트DB",
+  "status" : "종료"
+}
+
+###project 삭제
+DELETE http://localhost:8080/projects/1
+Content-Type: application/json
