@@ -18,7 +18,7 @@ public class Tag {
     @Column(name = "tag_id")
     long tagId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "task_id")
     Task task;
 

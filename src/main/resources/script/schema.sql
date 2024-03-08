@@ -1,7 +1,7 @@
-drop table if exists project;
-drop table if exists task;
-drop table if exists milestone;
 drop table if exists tag;
+drop table if exists task;
+drop table if exists project;
+drop table if exists milestone;
 drop table if exists member;
 
 create table project(
