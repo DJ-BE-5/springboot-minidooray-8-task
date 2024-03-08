@@ -6,14 +6,14 @@ drop table if exists member;
 
 create table project(
     project_id  int auto_increment,
-    admin_id    int not null,
+    admin_id    varchar(100) not null,
     name    varchar(100) not null,
     status      varchar(10) not null,
     primary key(project_id)
 );
 
-insert into project(admin_id,name,status) values(1,"프로젝트설계","종료");
-insert into project(admin_id,name,status) values(1,"프로젝트진행","활성");
+insert into project(admin_id,name,status) values("jieun","프로젝트설계","종료");
+insert into project(admin_id,name,status) values("jieun","프로젝트진행","활성");
 
 create table task(
     task_id int auto_increment,

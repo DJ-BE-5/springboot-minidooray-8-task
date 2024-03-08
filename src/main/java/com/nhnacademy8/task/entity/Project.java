@@ -21,7 +21,7 @@ public class Project {
     long projectId;
 
     @Column(name = "admin_id", nullable = false)
-    long adminId;
+    String adminId;
 
     @Column(name = "name", nullable = false)
     String name;

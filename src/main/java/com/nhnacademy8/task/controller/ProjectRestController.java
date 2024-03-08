@@ -15,15 +15,15 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/{projects}")
+@RequestMapping("/projects")
 public class ProjectRestController {
     @Autowired
     private ProjectRepository projectRepository;
 
 
-    @GetMapping()
-    public ResponseEntity<List<Project>> getProjectList(){
-        List<Project> projectList = projectRepository.findAll();
+    @GetMapping("/projectList/{adminId}")
+    public ResponseEntity<List<Project>> getProjectList(@PathVariable String adminId){
+        List<Project> projectList = projectRepository.findAllByAdminId(adminId);
         return ResponseEntity.ok(projectList);
     }
 

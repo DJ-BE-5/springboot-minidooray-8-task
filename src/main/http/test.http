@@ -1,7 +1,10 @@
 ###project 전체조회
+GET http://localhost:9999/projects/projectList/jieun
+Content-Type: application/json
+
 
 ###project 조회
-GET http://localhost:8080/projects/1
+GET http://localhost:9999/projects/1
 Content-Type: application/json
 
 ###project 등록
