@@ -29,4 +29,8 @@ Content-Type: application/json
 
 ###project 삭제
 DELETE http://localhost:8080/projects/1
+Content-Type: application/jsonx
+
+###get Task
+GET http://localhost:9999/tasks/taskList/2
 Content-Type: application/json

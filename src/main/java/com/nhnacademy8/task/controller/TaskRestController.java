@@ -3,6 +3,7 @@ package com.nhnacademy8.task.controller;
 import com.nhnacademy8.task.entity.Task;
 import com.nhnacademy8.task.repository.ProjectRepository;
 import com.nhnacademy8.task.repository.TaskRepository;
+import com.nhnacademy8.task.response.TaskResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,13 +22,13 @@ public class TaskRestController {
     private TaskRepository taskRepository;
 
 
-    @GetMapping("/getTaskList/{projectId}")
-    public ResponseEntity<List<Task>> getTasksByProjectId(@PathVariable long projectId) {
-        List<Task> taskList = taskRepository.getAllByProjectProjectId(projectId);
+    @GetMapping("/taskList/{projectId}")
+    public ResponseEntity<List<TaskResponse>> getTasksByProjectId(@PathVariable long projectId) {
+        List<TaskResponse> taskList = taskRepository.getTaskByProjectId(projectId);
         return ResponseEntity.ok(taskList);
     }
 
-    @GetMapping("/getTask/{taskId}")
+    @GetMapping("/taskDetail/{taskId}")
     public ResponseEntity<?> getTaskByTaskId(@PathVariable long taskId) {
         if(!taskRepository.existsById(taskId)){
             return new ResponseEntity<>("task not found : "+taskId, HttpStatus.NOT_FOUND);
